@@ -1,0 +1,79 @@
+<div class="pointer-events-none fixed inset-0 z-[9999] hidden md:block">
+    
+    <div 
+    ref="cursorOutline" 
+    class="fixed left-0 top-0 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 bg-transparent"
+    ></div>
+
+    <div 
+    ref="cursorDot" 
+    class="fixed left-0 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white mix-blend-difference z-[10000]"
+    ></div>
+
+</div>
+
+
+<script setup>
+    const cursorDot = ref(null)
+    const cursorOutline = ref(null)
+
+    onMounted(() => {
+        const { quickTo } = useGSAP()
+
+        // De Outline (grote cirkel) - plakt aan de muis (duration bijna 0)
+        const xToOutline = quickTo(cursorOutline.value, "x", { duration: 0.1, ease: "power3" })
+        const yToOutline = quickTo(cursorOutline.value, "y", { duration: 0.1, ease: "power3" })
+
+        // De Dot (kleine cirkel) - volgt traag (hogere duration)
+        const xToDot = quickTo(cursorDot.value, "x", { duration: 0.6, ease: "expo.out" })
+        const yToDot = quickTo(cursorDot.value, "y", { duration: 0.6, ease: "expo.out" })
+
+        window.addEventListener("mousemove", (e) => {
+            // Beide worden aangeroepen, maar de instellingen hierboven bepalen de snelheid
+            xToOutline(e.clientX)
+            yToOutline(e.clientY)
+            
+            xToDot(e.clientX)
+            yToDot(e.clientY)
+        })
+    })
+</script>
+
+<style scoped>
+    .cursor-outline, .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Cruciaal: je moet door de cursor heen kunnen klikken */
+    z-index: 9999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Wit + Difference = Invert */
+    mix-blend-mode: difference; 
+    }
+
+    .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    background-color: transparent; /* Alleen de rand voor de grote cirkel */
+    transition: transform 0.15s ease-out; /* Dit zorgt voor de 'lag' */
+    }
+
+    .cursor-dot {
+    width: 8px;
+    height: 8px;
+    }
+</style>
+
+
+<style>
+  html {
+    background-color: #334155;     /*BELANGRIJK VOOR MIJN CURSOR NIET TE VERANDEREN oh en hier kan je ook de bg kleur veranderen centraal veranderen. */
+    cursor: none !important;
+  }
+
+  a, button, input, textarea, .interactive {
+  cursor: none !important;
+}
+</style>

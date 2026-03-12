@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary text-secondary font-primary max-w-screen-2xl mx-auto px-6;
+
+    background-image: radial-gradient(
+      circle at 50% 50%, 
+      #1a1a1a 0%, 
+      #0a0a0a 100%
+    );
+    /* background-image: radial-gradient(
+      circle at 50% 50%, 
+      #1a1a1a 0%,
+      #181818 25%,
+      #141414 50%,
+      #0f0f0f 75%,
+      #0a0a0a 100%
+    ); */
+    background-attachment: fixed;
+  }
+  
+  /* h1, h2, h3 {
+    @apply font-display font-bold text-white;
+  } */
+}
