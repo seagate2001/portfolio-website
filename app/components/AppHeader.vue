@@ -8,8 +8,8 @@
 
         <ul 
             :class="isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-            class="fixed z-40 bg-primary/80 backdrop-blur-md md:bg-inherit md:backdrop-blur-none inset-0 flex flex-col items-center justify-center space-y-16 text-2xl transition-opacity duration-500 ease-in-out 
-                    md:relative md:inset-auto md:flex-row md:space-y-0 md:space-x-8 md:text-base md:opacity-100 md:pointer-events-auto md:flex md:justify-center"
+            class="fixed z-40 bg-primary/80 backdrop-blur-md md:bg-inherit md:backdrop-blur-none inset-0 flex flex-col items-center justify-center gap-16 text-2xl transition-opacity duration-500 ease-in-out 
+                    md:relative md:inset-auto md:flex-row md:gap-24 md:opacity-100 md:pointer-events-auto md:flex md:justify-center"
         >
             <li v-for="link in navLinks"
             :key="link.name"
@@ -33,7 +33,6 @@
 
                 </NuxtLink>
             </li>
-            <!-- <li  v-for="link in navLinks" class="font-semibold text-[48px] md:text-[18px]"><NuxtLink :to="link.path" @click="isMenuOpen = false">{{ link.name }}</NuxtLink></li> -->
             <li class="absolute bottom-24 md:hidden"><BaseButton text="My Resume"/></li>
         </ul>
 
@@ -66,11 +65,7 @@
     }
 
     // Scroll lock
-    watch(isMenuOpen, (newValue) => {
-        if (newValue) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+    watch(isMenuOpen, (open) => {
+        document.body.classList.toggle("overflow-hidden", open)
     })
 </script>

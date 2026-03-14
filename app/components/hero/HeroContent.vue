@@ -3,10 +3,10 @@
 
     <div class="w-full">
       <div class="flex flex-col mb-10">
-        <h1 class="text-[48pt] 2xl:text-[150px] font-bold text-secondary leading-none">
+        <h1 class="text-[48pt] lg:text-[150px] font-bold text-secondary leading-none">
           Front-end
         </h1>
-        <h1 class="text-[48pt] 2xl:text-[150px] text-right font-bold text-secondary leading-none">
+        <h1 class="text-[48pt] lg:text-[150px] text-right font-bold text-secondary leading-none">
           Developer
         </h1>
       </div>
@@ -28,7 +28,7 @@
     </div>
 
     <div
-      class="hidden pointer-events-none md:flex fixed bottom-20 left-10
+      class="hidden pointer-events-none md:flex fixed bottom-[5%] left-0
       items-center space-x-4 rotate-90 origin-right
       uppercase tracking-[0.2em] text-xs font-bold text-secondary/60"
     >
