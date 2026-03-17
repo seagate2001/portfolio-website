@@ -1,3 +1,4 @@
 <template>
   <Hero />
+  <About />
 </template>

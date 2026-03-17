@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
   fonts: {
     families: [
-      { name: 'Roboto Flex', weights: [400, 500, 700, 900] },
+      { name: 'Roboto Flex', weights: [400, 500, 600, 700, 900] },
       { name: 'Roboto Mono', weights: [400, 500, 700] },
     ],
   },

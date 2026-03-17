@@ -53,9 +53,9 @@
 
 <script setup lang="ts">
     const navLinks = [
-        { name: 'About', path: '/about' },
-        { name: 'Projects', path: '/about' },
-        { name: 'Contact', path: '/about' }
+        { name: 'About', path: '/' },
+        { name: 'Projects', path: '/' },
+        { name: 'Contact', path: '/' }
     ]
 
     const isMenuOpen = ref<boolean>(false);

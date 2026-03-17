@@ -1,11 +1,12 @@
 <template>
-    <div class="flex items-center">
+    <div :class="['flex items-center', width]">
         <button :class="[
-            'bg-secondary text-primary rounded-full flex items-center transition-all',
+            'bg-secondary text-primary rounded-full flex items-center justify-center transition-all',
             fontType,
             fontSize,
             paddingX,
             height,
+            width, 
             { 'mr-3': fButton }
         ]">
             {{ text }}
@@ -13,7 +14,7 @@
 
         <button 
             v-if="fButton" 
-            :class="['bg-secondary rounded-full w-10 h-10 flex items-center justify-center',
+            :class="['bg-secondary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0',
                 height
             ]"
         >
@@ -30,6 +31,7 @@
         fontType?: string,
         fontSize?: string,
         paddingX?: string,
+        width?: string,
         height?: string,
         imgSize?: string,
     }>(), {
@@ -39,6 +41,7 @@
         fontType: 'font-medium',
         fontSize: 'text-[18px]',
         paddingX: 'px-4',
+        width: 'auto',
         height: 'h-10',
         imgSize: '18',
     });
