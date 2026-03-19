@@ -38,7 +38,7 @@
         <SkillGroup title="Backend" :skills="backendSkills" />
         <SkillGroup title="Design & Tools" :skills="designSkills" />
     </div>
-    <BaseButton class="lg:hidden" text="My Resume" width="w-full" padding-x="px-0" />
+    <BaseButton class="lg:hidden mb-16" text="My Resume" width="w-full" padding-x="px-0" />
 </template>
 
 <script setup lang="ts">

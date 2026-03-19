@@ -1,19 +1,19 @@
 <template>
     <div :class="['flex items-center', width]">
-        <button :class="[
-            'bg-secondary text-primary rounded-full flex items-center justify-center transition-all',
-            fontType,
-            fontSize,
-            paddingX,
-            height,
-            width, 
-            { 'mr-3': fButton }
-        ]">
+        <button 
+            @click="$emit('click')"
+            :class="[
+                'bg-secondary text-primary rounded-full flex items-center justify-center transition-all',
+                fontType, fontSize, paddingX, height, width, 
+                { 'mr-3': fButton }
+            ]"
+        >
             {{ text }}
         </button>
 
         <button 
-            v-if="fButton" 
+            v-if="fButton"
+            @click="$emit('click')"
             :class="['bg-secondary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0',
                 height
             ]"
@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+    const emits = defineEmits(['click']);
+
     const props = withDefaults(defineProps<{
         text?: string,
         fButton?: boolean,
