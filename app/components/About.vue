@@ -25,11 +25,7 @@
                     alt="Profile Picture" 
                 />
                 
-                <BaseButton 
-                    text="My Resume" 
-                    width="w-full" 
-                    padding-x="px-0"
-                />
+                <BaseButton @click="downloadFile('TomKellensCV2026English.pdf', 'TomKellensCV.pdf')" text="My Resume" width="w-full" padding-x="px-0"/>
             </div>
         </div>
     </div>
@@ -42,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+    const { downloadFile } = useDownload();
+
     const frontendSkills = [
         { name: 'HTML', icon: 'html5-white.png' },
         { name: 'CSS', icon: 'css3-white.png' },

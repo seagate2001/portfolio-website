@@ -28,12 +28,12 @@
           </span>
         </button>
       </li>
-      <li class="absolute bottom-24 md:hidden"><BaseButton text="My Resume"/></li>
+      <li class="absolute bottom-24 md:hidden"><BaseButton @click="downloadFile('TomKellensCV2026English.pdf', 'TomKellensCV.pdf')" text="My Resume"/></li>
     </ul>
 
     <div class="flex justify-end items-center">
       <div class="hidden md:block">
-        <BaseButton text="My Resume"/>
+        <BaseButton @click="downloadFile('TomKellensCV2026English.pdf', 'TomKellensCV.pdf')" text="My Resume"/>
       </div>
 
       <button @click="toggleMenu" class="fixed top-6 right-6 z-50 md:hidden flex flex-col justify-center items-center w-12 h-12 rounded-xl bg-primary/60 backdrop-blur-md">
@@ -51,6 +51,8 @@
 </template>
 
 <script setup lang="ts">
+const { downloadFile } = useDownload();
+
 const gsap = useGSAP();
 const { scrollToSection } = useScroll();
 
