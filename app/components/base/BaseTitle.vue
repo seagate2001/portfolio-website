@@ -6,8 +6,8 @@
       </h1>
     </div>
 
-    <span ref="line1" class="block w-3/4 h-[2px] bg-white scale-x-0 origin-left"></span>
-    <span ref="line2" class="block mt-2 w-1/2 h-[2px] bg-white scale-x-0 origin-left"></span>
+    <span ref="line1" class="block w-3/4 border-t-[3px] border-white scale-x-0 origin-left"></span>
+    <span ref="line2" class="block mt-2 w-1/2 border-t-[3px] border-white scale-x-0 origin-left"></span>
   </div>
 </template>
 

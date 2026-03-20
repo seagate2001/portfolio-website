@@ -26,12 +26,12 @@
 
     <div
       ref="scrollIndicator"
-      class="hidden pointer-events-none lg:flex fixed bottom-[5%] left-0
-      items-center space-x-4 rotate-90 origin-right
-      uppercase tracking-[0.2em] text-xs font-bold text-secondary/60"
+      class="hidden lg:flex fixed bottom-10 left-10 flex-col items-center gap-3 text-secondary/70"
     >
-      <span>Scroll Down</span>
-      <div class="w-12 h-[1px] bg-secondary/60"></div>
+      <div class="w-6 h-10 border-2 border-secondary/70 rounded-full flex justify-center">
+        <div class="scroll-dot w-1 h-2 bg-secondary/70  rounded-full mt-2"></div>
+      </div>
+      <span class="uppercase tracking-[0.2em] text-xs font-bold">Explore</span>
     </div>
 
   </div>
@@ -87,3 +87,18 @@
   });
 
 </script>
+
+<style scoped>
+  @keyframes scrollPulse {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .scroll-dot {
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+</style>

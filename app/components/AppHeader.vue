@@ -22,8 +22,9 @@
         >
           {{ link.name }}
 
-          <span class="hidden md:block absolute left-0 -bottom-1 w-full h-[2px] overflow-hidden">
-            <span class="block h-full w-full bg-white -translate-x-full transition-transform duration-300 ease-out group-hover:translate-x-0"></span>
+          <span class="hidden md:block absolute -bottom-1 w-full border-t-[3px] border-white 
+                        transition-transform duration-300 ease-out origin-left
+                        scale-x-0 group-hover:scale-x-100">
           </span>
         </button>
       </li>
@@ -77,17 +78,14 @@ watch(isMenuOpen, (isOpen) => {
   // Scroll lock
   document.body.classList.toggle("overflow-hidden", isOpen);
 
-//   if (window.innerWidth >= 768) return; 
-
+  // Hamburger menu items stagger animation
   if (isOpen) {
-    // Openen: Stagger de items omhoog en naar binnen
     gsap.fromTo(navLinkRefs.value, 
       { opacity: 0, y: 30, scale: 0.9 }, 
       { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: "back.out(1.7)", delay: 0.2 }
     );
   } else {
-    // Sluiten: Stagger de items zachtjes naar beneden en vervagen
-    gsap.to(navLinkRefs.value, { opacity: 0, y: 20, duration: 0.3, stagger: 0.05, ease: "power2.in" });
+    gsap.to(navLinkRefs.value, { opacity: 0, y: 20, duration: 0.3, stagger: 0.05, ease: "power2.in", clearProps: "all" });
   }
 });
 </script>

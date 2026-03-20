@@ -2,7 +2,7 @@
   <section class="mb-12">
     <div class="flex items-baseline gap-4 mb-6">
       <h2 class="text-2xl font-bold text-white">{{ title }}</h2>
-      <div class="h-[1px] flex-1 bg-secondary"></div>
+      <div class="border-t-[3px] flex-1 bg-secondary"></div>
     </div>
 
     <div class="flex flex-wrap gap-4">
