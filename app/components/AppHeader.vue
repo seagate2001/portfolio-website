@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-2 md:grid-cols-3 relative z-30 items-center mt-6">
+  <nav class="grid grid-cols-2 md:grid-cols-3 relative z-40 items-center mt-6">
     <div class="flex justify-start">
       <NuxtLink to="/" class="relative z-50 text-xl font-bold">
         <NuxtImg src="/logoIcon.png" alt="logo" width="35px" />
@@ -9,7 +9,7 @@
     <ul 
       ref="menuOverlay"
       :class="isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-      class="fixed z-40 bg-primary/80 backdrop-blur-md md:bg-inherit md:backdrop-blur-none inset-0 flex flex-col items-center justify-center gap-16 text-2xl transition-opacity duration-500 ease-in-out 
+      class="fixed z-50 bg-primary/80 backdrop-blur-md md:bg-inherit md:backdrop-blur-none inset-0 flex flex-col items-center justify-center gap-16 text-2xl transition-opacity duration-500 ease-in-out 
              md:relative md:inset-auto md:flex-row md:gap-24 md:opacity-100 md:pointer-events-auto md:flex md:justify-center"
     >
       <li v-for="link in navLinks"

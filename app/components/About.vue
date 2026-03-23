@@ -3,7 +3,7 @@
         
         <div class="lg:w-3/5">
             <BaseTitle title="About"/>
-            <h2 class="font-secondary text-[20px] lg:text-[36px]">I'm Tom Kellens. A {Problem solver}</h2>
+            <h2 class="font-secondary text-[20px] lg:text-[36px]">I'm Tom Kellens. <span class="whitespace-nowrap">A {Problem solver}</span></h2>
             
             <div class="mt-10 lg:hidden">
                 <NuxtImg class="z-10 w-3/4 md:w-1/2 shadow-[15px_15px_0px_0px_rgba(217,217,217,0.5)]" src="/TomKellensProfielFotoCV.png" alt="Profile Picture" />
@@ -34,7 +34,7 @@
         <SkillGroup title="Backend" :skills="backendSkills" />
         <SkillGroup title="Design & Tools" :skills="designSkills" />
     </div>
-    <BaseButton class="lg:hidden mb-16" text="My Resume" width="w-full" padding-x="px-0" />
+    <BaseButton @click="downloadFile('TomKellensCV2026English.pdf', 'TomKellensCV.pdf')" class="lg:hidden mb-16" text="My Resume" width="w-full" padding-x="px-0" />
 </template>
 
 <script setup lang="ts">
