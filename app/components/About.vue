@@ -3,7 +3,15 @@
         
         <div class="lg:w-3/5">
             <BaseTitle title="About"/>
-            <h2 class="font-secondary text-[20px] lg:text-[36px]">I'm Tom Kellens. <span class="whitespace-nowrap">A {Problem solver}</span></h2>
+            <h2 class="font-secondary text-[24px] lg:text-[36px] flex items-center flex-wrap gap-x-2">
+            I'm Tom Kellens. 
+            <span class="whitespace-nowrap flex items-center">
+                A 
+                <span class="text-[30px] lg:text-[48px] ml-2 mr-[2px]">{</span>
+                <span ref="scrambleRef" class="inline-block ">problem solver</span>
+                <span class="text-[30px] lg:text-[48px]">}</span>
+            </span>
+            </h2>
             
             <div class="mt-10 lg:hidden">
                 <NuxtImg class="z-10 w-3/4 md:w-1/2 shadow-[15px_15px_0px_0px_rgba(217,217,217,0.5)]" src="/TomKellensProfielFotoCV.png" alt="Profile Picture" />
@@ -40,12 +48,17 @@
 <script setup lang="ts">
     const { downloadFile } = useDownload();
 
+    const gsap = useGSAP();
+    const scrambleRef = ref<HTMLElement | null>(null);
+    const words = ['thinker', 'creator', 'problem solver']
+
     const frontendSkills = [
         { name: 'HTML', icon: 'html5-white.png' },
         { name: 'CSS', icon: 'css3-white.png' },
         { name: 'JavaScript', icon: 'js-white.png' },
         { name: 'TypeScript', icon: 'typescript-white.png' },
         { name: 'Vue.js', icon: 'vuejs-white.png' },
+        { name: 'Nuxt.js', icon: 'nuxt-white.png' },
         { name: 'React.js', icon: 'react-white.png' },
         { name: 'Tailwind CSS', icon: 'tailwind-white.png' },
     ];
@@ -63,4 +76,24 @@
         { name: 'GitHub', icon: 'github-white.png' },
         { name: 'Docker', icon: 'docker-white.png' },
     ];
+
+    onMounted(() => {
+        const tl = gsap.timeline({
+            repeat: -1,
+        })
+
+        words.forEach((word) => {
+            tl.to(scrambleRef.value, {
+                duration: 1.5,
+                scrambleText: {
+                    text: word,
+                    chars: "lowerCase",
+                    revealDelay: 0.5,
+                    tweenLength: true,
+                },
+                ease: 'power2.inOut',
+                delay: 2,
+            })
+        })
+    });
 </script>

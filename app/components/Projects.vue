@@ -39,14 +39,19 @@ const projects = [
     description: "This is my portfolio website, built to <strong>push the boundaries</strong> of what I've learned so far. It allowed me to explore new technologies such as <strong>GSAP</strong> for <strong>dynamic animations</strong> and <strong>Nuxt.js</strong> to gain experience with <strong>server-side rendering</strong> and <strong>performance optimizations</strong>, all while working within the <strong>Vue.js ecosystem</strong>.", 
     technologies: [
       { 
-        name: 'Vue.js', 
-        icon: 'vuejs-white.png', 
-        alt: 'vuejs-white-icon'
+        name: 'Nuxt.js', 
+        icon: 'nuxt-white.png', 
+        alt: 'nuxt-white-icon'
       }, 
       {
         name: 'TypeScript', 
         icon: 'typescript-white.png', 
         alt: 'typescript-white-icon'
+      },
+      {
+        name: 'Tailwind', 
+        icon: 'tailwind-white.png', 
+        alt: 'tailwind-white-icon'
       }
     ]
   },

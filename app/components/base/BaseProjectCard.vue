@@ -73,6 +73,8 @@ const props = defineProps<{
   technologies: Technology[],
 }>();
 
+const gsap = useGSAP();
+
 const isOpen = ref(false);
 const numPoints = 8;
 const points = ref(Array(numPoints).fill(100));
@@ -92,7 +94,7 @@ const toggleCard = () => {
   isOpen.value = !isOpen.value;
   
   points.value.forEach((_, i) => {
-    useGSAP().to(points.value, {
+    gsap.to(points.value, {
       [i]: isOpen.value ? 0 : 100,
       duration: 1.2,
       ease: "power4.inOut",
