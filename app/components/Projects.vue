@@ -1,7 +1,7 @@
 <template>
   <section class="overflow-x-hidden">
     <BaseTitle title="Projects" />
-    <h3 class="text-[20px] w-full lg:w-1/2 my-16">Driven by curiosity and a love for clean code. This is a look into my digital journey, furthering my skills one project at a time.</h3>
+    <h3 class="text-[20px] text-secondary w-full lg:w-1/2 my-16">Driven by a passion for learning and a love for clean code. This is a look into my digital journey, furthering my skills one project at a time.</h3>
     <div class="flex flex-col w-full">
       <BaseProjectCard 
         v-for="(project, index) in projects" 
