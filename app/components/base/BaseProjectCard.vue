@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="w-full flex mb-16 md:mb-24"
+    class="project-card w-full flex mb-16 md:mb-24"
     :class="index % 2 !== 0 ? 'justify-end' : 'justify-start'"
   >
     <div 

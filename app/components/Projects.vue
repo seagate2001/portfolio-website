@@ -1,33 +1,40 @@
 <template>
-  <section class="overflow-x-hidden">
+  <section class="overflow-hidden">
     <BaseTitle title="Projects" />
-    <h3 class="text-[20px] text-secondary w-full lg:w-1/2 my-16">Driven by a passion for learning and a love for clean code. This is a look into my digital journey, furthering my skills one project at a time.</h3>
+
+    <h3 class="text-[20px] text-secondary w-full lg:w-1/2 my-16">
+      Driven by a passion for learning and a love for clean code. This is a look into my digital journey, furthering my skills one project at a time.
+    </h3>
+
     <div class="flex flex-col w-full">
-      <BaseProjectCard 
-        v-for="(project, index) in projects" 
-        :key="index" 
+      <BaseProjectCard
+        v-for="(project, index) in projects"
+        :key="index"
         :title="project.title"
         :image="project.image"
-        :description="project.description" 
+        :description="project.description"
         :technologies="project.technologies"
-        :index="index" 
+        :index="index"
       />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+
 const projects = [
   { 
     title: 'Movie List App', 
     image: 'PortfolioWebsite.png', 
     description: "My first mobile development project built with <strong>React Native</strong> and <strong>Expo</strong>. This app allows users to <strong>create and manage a personal watchlist</strong> of movies and series, helping them <strong>keep track</strong> of what they've watched through a <strong>clean and intuitive interface</strong>.", 
     technologies: [
-      { name: 'React Native', 
+      { 
+        name: 'React Native', 
         icon: 'react-white.png', 
         alt: 'react-white-icon'
       }, 
-      { name: 'TypeScript', 
+      { 
+        name: 'TypeScript', 
         icon: 'typescript-white.png', 
         alt: 'typescript-white-icon'
       }
@@ -42,7 +49,7 @@ const projects = [
         name: 'Nuxt.js', 
         icon: 'nuxt-white.png', 
         alt: 'nuxt-white-icon'
-      }, 
+      },
       {
         name: 'TypeScript', 
         icon: 'typescript-white.png', 
@@ -56,4 +63,24 @@ const projects = [
     ]
   },
 ];
+
+const gsap = useGSAP();
+
+onMounted(() => {
+  const cards = gsap.utils.toArray(".project-card");
+
+  cards.forEach((card: any) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 75%",
+        once: true
+      }
+    });
+  });
+});
 </script>
