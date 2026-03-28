@@ -1,6 +1,7 @@
 <template>
     <div :class="['flex items-center', width]">
         <button 
+            :type="type"
             @click="$emit('click')"
             :class="[
                 'bg-secondary text-primary rounded-full flex items-center justify-center transition-all',
@@ -13,6 +14,7 @@
 
         <button 
             v-if="fButton"
+            :type="type"
             @click="$emit('click')"
             :class="['bg-secondary rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0',
                 height
@@ -36,6 +38,7 @@
         width?: string,
         height?: string,
         imgSize?: string,
+        type?: "button" | "submit" | "reset",
     }>(), {
         text: 'Default text',
         fButton: true,
@@ -46,5 +49,6 @@
         width: 'auto',
         height: 'h-10',
         imgSize: '18',
+        type: 'button',
     });
 </script>
