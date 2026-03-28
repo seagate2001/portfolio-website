@@ -7,10 +7,11 @@
                 </h3>
                 <form
                     name="contact"
-                    netlify
+                    data-netlify="true"
                     method="POST"
                     class="border-dashed relative border-secondary border p-8 md:p-10 w-full"
                 >
+                <input type="hidden" name="form-name" value="contact" />
                     <div class="flex flex-col gap-10 md:max-w-[480px] lg:max-w-[580px]">
             
                         <div class="flex flex-col md:flex-row gap-10 md:gap-20 w-full">
@@ -57,7 +58,7 @@
                 </form>
 
                 <a href="mailto:kellens.tom@hotmail.com" class="flex items-center gap-2 my-10 w-fit">
-                    <NuxtImg class="pointer-events-none" src="/icons/envelope-white.png" width="30px" />
+                    <NuxtImg class="pointer-events-none" src="/icons/envelope-white.png" width="30px" alt="email-icon" />
                     <h2 class="font-secondary text-xl">kellens.tom@hotmail.com</h2>
                 </a>
             </div>
@@ -66,6 +67,7 @@
             class="hidden lg:block" 
             src="/contact-illustration.png" 
             width="600px" 
+            alt="contact-illustaration"
         />
     </div>
 </template>
