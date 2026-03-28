@@ -7,8 +7,9 @@
                 </h3>
                 <form
                     name="contact"
-                    data-netlify="true"
                     method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
                     class="border-dashed relative border-secondary border p-8 md:p-10 w-full"
                 >
                 <input type="hidden" name="form-name" value="contact" />
