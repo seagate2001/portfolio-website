@@ -10,6 +10,7 @@
                     method="POST"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
+                    @submit.prevent="handleSubmit"
                     class="border-dashed relative border-secondary border p-8 md:p-10 w-full"
                 >
                 <input type="hidden" name="form-name" value="contact" />
@@ -72,3 +73,23 @@
         />
     </div>
 </template>
+
+<script setup lang="ts">
+    const handleSubmit = async (event: Event) => {
+        const formElement = event.target as HTMLFormElement;
+        const fd = new FormData(formElement);
+
+        try {
+            await $fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(fd as any).toString(),
+            });
+            
+            formElement.reset();
+        } catch (error) {
+            console.error("Submission error:", error);
+            alert("Something went wrong.");
+        }
+    };
+</script>
