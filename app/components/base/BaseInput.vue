@@ -3,6 +3,7 @@
     <component 
       :is="type === 'textarea' ? 'textarea' : 'input'"
       :id="id"
+      :name="name"
       :type="type"
       placeholder=" "
       :required="required"
@@ -24,6 +25,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   id: string,
+  name: string,
   label: string,
   type?: string,
   required?: boolean
