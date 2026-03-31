@@ -24,8 +24,8 @@
 
 const projects = [
   { 
-    title: 'Movie List App', 
-    image: 'PortfolioWebsite.png', 
+    title: 'Watch List App', 
+    image: 'WatchListApp.png', 
     description: "My first mobile development project built with <strong>React Native</strong> and <strong>Expo</strong>. This app allows users to <strong>create and manage a personal watchlist</strong> of movies and series, helping them <strong>keep track</strong> of what they've watched through a <strong>clean and intuitive interface</strong>.", 
     technologies: [
       { 
